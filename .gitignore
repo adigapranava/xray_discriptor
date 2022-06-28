@@ -1,0 +1,17 @@
+*.png
+*.xml
+*.txt
+*.tgz
+.ipynb_checkpoints
+*.zip
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.lz
+*.tar.Z
+*.tar.lzma
+*.tar.lzo
+*.tar.lzop
+*.nb
+/utils/
+*.pickle
