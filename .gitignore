@@ -14,4 +14,4 @@
 *.tar.lzop
 *.nb
 /utils/
-*.pickle
+*.pickle.h5
