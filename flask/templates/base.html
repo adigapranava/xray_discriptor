@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>X-RAY</title>
+    <!-- CSS only -->
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"
+    ></script>
+  </head>
+  <body>
+      <!--Main Navigation-->
+  <header>
+    <style>
+      #intro {
+        background-image: url("https://www.deeperblue.com/wp-content/uploads/2018/05/AdobeStock_90532409.jpeg");
+        height: 100vh;
+      }
+
+      /* Height for devices larger than 576px */
+      @media (min-width: 992px) {
+        #intro {
+          margin-top: -58.59px;
+        }
+      }
+
+      .navbar .nav-link {
+        color: #fff !important;
+      }
+    </style>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+      <div class="container-fluid">
+        <!-- Navbar brand -->
+        <a class="navbar-brand nav-link" target="_blank" href="https://mdbootstrap.com/docs/standard/">
+          <strong>X-RAY MEDICAL REPORT GENERATOR</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+          aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Background image -->
+    <div id="intro" class="bg-image shadow-2-strong">
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.8);">
+        <div class="container d-flex align-items-center justify-content-center text-center h-100">
+          <form action="/" method="POST" id="img-form" enctype="multipart/form-data">
+            <div class="text-white">
+              <h2 class="mb-3">Get the details of your Health</h2>
+              <h5 class="mb-4">Just by uploading X-RAY images</h5>
+              <input type="file" class="form-control btn btn-outline-light m-2" id="image1" name="image1" accept="image/x-png,image/gif,image/jpeg, image/x-jpg" required/>
+              <br/>
+              <input type="file" class="form-control btn btn-outline-light m-2" id="image2" name="image2" accept="image/x-png,image/gif,image/jpeg, image/x-jpg" required/>
+              <br/>
+              <button class="btn btn-outline-light btn-md m-2" type="submit" id="give">Get Details</button>
+            </div>
+          </form>
+        </div>
+        <div class="text-dark">
+            <p>Namaskara tell the truth if u are Ghost</p>
+        </div>
+      </div>
+    </div>
+    <!-- Background image -->
+  </header>
+  <!--Main Navigation-->
+
+
+  <!--Footer-->
+  <footer class="bg-light text-lg-start">
+
+    <hr class="m-0" />
+
+    <div class="text-center py-4 align-items-center">
+      <p>To know more about our work, Go through the following Documentation</p>
+      <a href="https://github.com/adigapranava/xray_discriptor" class="btn btn-dark m-1" role="button"
+        rel="nofollow" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-dark" href="https://github.com/adigapranava/xray_discriptor">X_RAY.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!--Footer-->
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
