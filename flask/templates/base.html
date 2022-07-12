@@ -43,13 +43,23 @@
       .navbar .nav-link {
         color: #fff !important;
       }
+
+      .glass {
+        backdrop-filter: blur(3px) saturate(200%);
+        -webkit-backdrop-filter: blur(3px) saturate(200%);
+        background-color: rgba(17, 25, 40, 0.72);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.125);
+        font-family: 'Montserrat', sans-serif;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Reenie+Beanie&display=swap');
     </style>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
       <div class="container-fluid">
         <!-- Navbar brand -->
-        <a class="navbar-brand nav-link" target="_blank" href="https://mdbootstrap.com/docs/standard/">
+        <a class="navbar-brand nav-link" target="_blank" href="http://127.0.0.1:5000/">
           <strong>X-RAY MEDICAL REPORT GENERATOR</strong>
         </a>
         <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
@@ -64,17 +74,30 @@
     <div id="intro" class="bg-image shadow-2-strong">
       <div class="mask" style="background-color: rgba(0, 0, 0, 0.8);">
         <div class="container d-flex align-items-center justify-content-center text-center h-100">
-          <form action="/" method="POST" id="img-form" enctype="multipart/form-data">
-            <div class="text-white">
-              <h2 class="mb-3">Get the details of your Health</h2>
-              <h5 class="mb-4">Just by uploading X-RAY images</h5>
-              <input type="file" class="form-control btn btn-outline-light m-2" id="image1" name="image1" accept="image/x-png,image/gif,image/jpeg, image/x-jpg" required/>
-              <br/>
-              <input type="file" class="form-control btn btn-outline-light m-2" id="image2" name="image2" accept="image/x-png,image/gif,image/jpeg, image/x-jpg" required/>
-              <br/>
-              <button class="btn btn-outline-light btn-md m-2" type="submit" id="give">Get Details</button>
+
+          {%if data%}
+          <div class="card text-center glass" style="width: 650px;height:650px">
+            <div class="card-header" style="display:flex">
+              <img src="{{url_for('static', filename='img/uploads/img1.png')}}" class="card-img-top" alt="Sunset Over the Sea"  style="width: 300px;"/>
+              <img src="{{url_for('static', filename='img/uploads/img2.png')}}" class="card-img-top" alt="Sunset Over the Sea" style="width: 300px;"/>
             </div>
-          </form>
+            <div class="card-body" >
+              <p class="text-light" style="font-family: 'Reenie Beanie', cursive; justify-content: center; font-size:20px; text-transform: capitalize;">{{data["report"]}}</p>
+            </div>
+          </div>
+          {%else%}
+            <form action="/" method="POST" id="img-form" enctype="multipart/form-data">
+              <div class="text-white">
+                <h2 class="mb-3">Get the details of your Health</h2>  
+                <h5 class="mb-4">Just by uploading X-RAY images</h5>
+                <input type="file" class="form-control btn btn-outline-light m-2" id="image1" name="image1" accept="image/x-png,image/gif,image/jpeg, image/x-jpg" required/>
+                <br/>
+                <input type="file" class="form-control btn btn-outline-light m-2" id="image2" name="image2" accept="image/x-png,image/gif,image/jpeg, image/x-jpg" required/>
+                <br/>
+                <button class="btn btn-outline-light btn-md m-2" type="submit" id="give" onclick="loadingDisplay()">Get Details</button>
+              </div>
+            </form>
+          {%endif%}
         </div>
         <div class="text-dark">
             <p>Namaskara tell the truth if u are Ghost</p>
@@ -104,6 +127,8 @@
       © 2020 Copyright:
       <a class="text-dark" href="https://github.com/adigapranava/xray_discriptor">X_RAY.com</a>
     </div>
+    <div id="loader">
+    </div>
     <!-- Copyright -->
   </footer>
   <!--Footer-->
@@ -111,5 +136,7 @@
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Custom scripts -->
     <script type="text/javascript" src="js/script.js"></script>
+    <script src="{{url_for('static', filename='js/script.js')}}"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
 </body>
 </html>
